@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax json data</title>
+</head>
+<body>
+<div id="div1">
+    用户名：<input type="text" id="txtname" value=""/>
+    密码：<input type="text" id="txtpassword" value=""/>
+    确认密码：<input type="text" id="txtpassword1" value="" /> 
+</div>
+<input type="button" id="bt1" value="提交"/>
+<script>
+    var oBt = document.getElementById("bt1");
+    var oDiv1 = document.getElementById("div1");
+    oBt.onclick = function () {
+        var xhr;
+        if (window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest();
+        } else {
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    //var arrUser = eval("(" + xhr.responseText + ")");
+                    oDiv1.innerHTML = xhr.responseText;
+                } else {
+                    alert("失败");
+                }
+            }
+        }
+        
+        xhr.open("post", "http://localhost:63486/user/CheckUserName", true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.send("username=gao&callback=fn3");
+    }
+</script>
+</body>
+</html>

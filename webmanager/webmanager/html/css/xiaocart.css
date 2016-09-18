@@ -1,0 +1,41 @@
+.shopping-car{float: right;height:42px; width: 38px; background: url("../images/2.bmp") no-repeat ; margin-top: -42px;
+    margin-left: 190px; position:relative; cursor: pointer; }
+/*.scar{height: 28px; width:34px; background: url("../images/icons.png")no-repeat -524px -5px;position: absolute; top:12px; left: 5px;}*/
+.shopping-car .span{display: inline-block;color: #fff;position: absolute;top: 3px; left: 14px; height: 15px; width: 15px; background: #64a131; text-align: center; font-size: 14px;}
+
+.account{
+    position: absolute;
+    top: 78px;
+    right: -10px;
+    width: 310px;
+    max-height: 410px;
+    padding: 15px 0 15px 15px;
+    background: #fff;
+    box-shadow: 0 0 45px rgba(175,175,175,0.75);
+    z-index: 11;
+    display: none;
+}
+.account ul{
+    max-height: 290px; overflow-y: scroll;
+}
+.account ul li{
+    width: 290px;
+    height: 86px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+}
+
+.account li  img{
+    height: 70px;
+    width: 70px;
+    float: left;
+}
+.account li .product{
+    float: left;
+    width: 195px;
+    height: 70px;
+    margin-left: 10px;
+}
+.account .product p{
+    font-size: 14px;
+}

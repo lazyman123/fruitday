@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax json data</title>
+    <script src="../Scripts/jquery-1.8.2.js"></script>
+</head>
+<body>
+    <div id="div1">
+        <div>
+            标示：<input type="text" id="txtid" />
+        </div>
+        <div>
+            名称：<input type="text" id="txtname" />
+        </div>
+        <div>
+            价格：<input type="text" id="txtprice" />
+        </div>
+        <div>
+            图片：<input type="text" id="txtimg" />
+        </div>
+        <div><input type="button" id="bt1" value="提交" /></div>
+    </div>
+    <script>
+        $("#bt1").click(function () {
+            //ajax;
+            var ajaxurl = "../product/CreateUpdateProduct_get";
+            var ajaxId = $("#txtid").val();
+            var ajaxDataJson = {
+                id: ajaxId,
+                name: $("#txtname").val(),
+                price: $("#txtprice").val(),
+                imgsrc:$("#txtimg").val()
+            }
+
+            var dataStr = JSON.stringify(ajaxDataJson);
+
+            $.ajax({
+                url: ajaxurl,
+                data: {
+                    id: ajaxId,
+                    datajson: dataStr
+                }
+            });
+        })
+
+
+
+
+
+
+
+
+
+        //$("#bt1").click(function () {
+        //    var id=$("#txtid").val();
+        //    var dataJsonStr={
+        //        id:id,
+        //        name:$("#txtname").val(),
+        //        price:$("#txtprice").val(),
+        //        imgSrc:$("#txtimg").val()
+        //    }
+        //    $.ajax({
+        //        url: "../product/CreateUpdateProduct_get",
+        //        data: {
+        //            id: id,
+        //            datajson:JSON.stringify(dataJsonStr)
+        //        },
+        //        success: function (data) {
+        //            alert(data);
+        //        }
+        //    });
+        //})
+    </script>
+</body>
+</html>

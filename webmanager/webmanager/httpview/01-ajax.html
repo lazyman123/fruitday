@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax json data</title>
+</head>
+<body>
+<div id="div1">
+    <p id="pname">1</p>
+    <p id="page">2</p>
+    <p id="pimg">3</p>
+</div>
+<input type="button" id="bt1" value="加载所有的用户"/>
+<script>
+    var oBt = document.getElementById("bt1");
+    var oDiv1 = document.getElementById("div1");
+    oBt.onclick = function () {
+        var xhr;
+        if (window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest();
+        }else{
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    var arrUser = eval("(" + xhr.responseText + ")");
+
+                    for (var i = 0; i < arrUser.length; i++) {
+                        oDiv1.innerHTML += "id:" + arrUser[i].Id+";name:"+arrUser[i].Name+";password:"+arrUser[i].password;
+
+                    }
+                }
+                } else {
+                    alert("失败");
+                }
+            }
+        }
+        xhr.open("get", "http://localhost:8080/api/Users", true);
+        xhr.send();
+    }
+</script>
+</body>
+</html>

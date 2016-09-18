@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax json data</title>
+</head>
+<body>
+<div id="div1">
+    <input id="pname" type="text" />
+    <input id="page" type="text"/>   
+</div>
+<input type="button" id="bt1" value="注册用户"/>
+<script>
+    var oBt = document.getElementById("bt1");
+    var oDiv1 = document.getElementById("div1");
+    oBt.onclick = function () {
+        var nameNew = document.getElementById("pname").value;
+        var passwordNew = document.getElementById("page").value;
+
+        var xhr;
+        if (window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest();
+        }else{
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    if (xhr.responseText == "1") {
+                        alert("成功");
+                    } else {
+                        alert("失败");
+                    }                    
+                } else {
+                    alert("失败");
+                }
+            }
+        }
+        xhr.open("get", "http://localhost:8080/api/products/GetProductByPage?pagesize=1&pageindex=2", true);
+        xhr.send();
+    }
+ 
+    function fn(data) {
+        for (var i = 0; i < data.length; i++) {
+            alert(data[i].Name);
+        }
+    }
+    //fn([{"Id":2,"Name":"Yo-yo","Category":"Toys","Price":3.75,"ImgSrc":null}]);
+</script>
+    <script src="http://localhost:8080/products/GetProductsByPage?pagesize=10&pageindex=1&callback=fn">
+    </script>
+        </body>
+</html>

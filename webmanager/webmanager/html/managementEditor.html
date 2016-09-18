@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/management.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <title>天天果园--后台管理</title>
+</head>
+<body>
+<div class="navbar">
+    <div class="logo">
+        <img src="images/logo.jpg" alt="天天果园">
+    </div>
+    <div class="navbar-right">
+        <ul>
+            <li><a href="">站点首页</a></li>
+            <li><a href="">账号设置</a></li>
+            <li><a href="">安全退出</a></li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            商品信息
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        <ul>
+                            <li><a href="management.html">商品列表</a></li>
+                            <li><a href="managementEditor.html">商品编辑</a></li>
+                            <li><a href="">商品属性</a></li>
+                            <li><a href="">品牌管理</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            订单信息
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                        <ul>
+                            <li><a href="">订单列表</a></li>
+                            <li><a href="">添加订单</a></li>
+                            <li><a href="">缺货登记</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            会员管理
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+                        <ul>
+                            <li><a href="">会员列表</a></li>
+                            <li><a href="">添加会员</a></li>
+                            <li><a href="">会员等级</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <table class="table table-hover">
+            <tr></tr>
+        </table>
+        <div id="div1">
+            <div>
+                标示：<input type="text" id="txtid" />
+            </div>
+            <div>
+                名称：<input type="text" id="txtname" />
+            </div>
+            <div>
+                价格：<input type="text" id="txtprice" />
+            </div>
+            <div>
+                图片：<input type="text" id="txtimg" />
+            </div>
+            <div><input type="button" id="bt1" value="提交" /></div>
+        </div>
+    </div>
+</div>
+<script>
+ $(function () {
+     $("#bt1").click(function () {
+         var ajaxId=$('#txtid').val();
+         var ajaxDataJson={
+             id:ajaxId,
+             name:$('#txtname').val(),
+             price:$('#txtprice').val(),
+             imgSrc:$('#txtimg').val()
+         }
+         var dataStr=JSON.stringify(ajaxDataJson);
+         $.ajax({
+             url:"../product/CreateUpdateProduct_post",
+             data:{
+                 id:ajaxId,
+                 datajson:dataStr
+             },
+             type:"post",
+             success:function (data) {
+                 alert("修改成功");
+             }
+         })
+     });
+ })
+</script>
+</body>
+</html>

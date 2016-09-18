@@ -1,0 +1,644 @@
+body,p,ul,dl,ol,li,h1,h2,h3,h4,h5,h6,dd{margin:0;padding:0;}
+
+h1,h2,h3,h4,h5{font-weight:normal;}
+img{border:none;}
+body{font-size:12px;"微软雅黑"}
+li{list-style:none;}
+a{text-decoration:none;color:#666;}
+span{display:block}
+html,body{height: 100%}
+/* flexslider */
+.flexslider{position:relative;height:400px;overflow:hidden;background:url(../images/loading.gif) 50% no-repeat;}
+.slides{position:relative;z-index:1;}
+.slides li{height:400px;}
+.flex-control-nav{position:absolute;bottom:10px;z-index:2;width:100%;text-align:center;}
+.flex-control-nav li{display:inline-block;width:14px;height:14px;margin:0 5px;*display:inline;zoom:1;}
+.flex-control-nav a{display:inline-block;width:14px;height:14px;line-height:40px;overflow:hidden;background:url(../images/dot.png) right 0 no-repeat;cursor:pointer;}
+.flex-control-nav .flex-active{background-position:0 0;}
+
+.flex-direction-nav{position:absolute;z-index:3;width:100%;top:45%;}
+.flex-direction-nav li a{display:block;width:50px;height:50px;overflow:hidden;cursor:pointer;position:absolute;}
+.flex-direction-nav li a.flex-prev{left:40px;background:url(../images/prev.png) center center no-repeat;}
+.flex-direction-nav li a.flex-next{right:40px;background:url(../images/next.png) center center no-repeat;}
+/******************goods******************/
+.goods{
+    width:100%;
+    height: 200px;
+}
+.goods ul{
+    margin: 0 auto;
+}
+.goods ul li{
+    float: left;
+    width: 290px;
+    height: 140px;
+    margin: 12px;
+ }
+.header-list{
+    width: 1280px;
+    height: 70px;
+    border-top: 1px solid #cccccc;
+}
+
+.shop-list{
+    width: 1280px;
+    height: 732px;
+    margin: 0 auto;
+}
+.shop-list-2{
+    width: 1280px;
+    height: 424px;
+    margin: 0 auto;
+}
+.shop-list dl{
+    margin: 8px;
+    float: left;
+}
+.shop-list-2 dl{
+    margin: 8px;
+    float: left;
+}
+dd{
+    width: 240px;
+    float: left;
+}
+dl dt img{
+    width: 240px;
+    height: 240px;
+}
+.imglist img{
+    width: 301px;
+    height: 42px;
+    float: left;
+    margin-top: 20px;
+}
+dl dt a{
+    display: block;
+    width: 240px;
+    height:240px;
+    overflow: hidden;
+}
+dl dd div{
+    margin-top: 10px;
+    float: left;
+}
+dl dd div p{
+    font-size: 14px;
+}
+.name{
+    color: #555;
+}
+.price{
+    margin-left: 3px;
+    margin-top: 3px;
+    color: #bbbbbb;
+}
+dl dd  span{
+    margin-top: 12px;
+    float: right;
+    width: 36px;
+    height: 33px;
+    background: url("../images/ct.jpg") no-repeat;
+}
+.header-list a{
+    float: right;
+    margin-top:30px;
+    font-size: 14px;
+    width: 50px;
+}
+/*****************Fruit****************/
+.list{
+    width: 100%;
+    height: 214px;
+}
+
+.list-1:after,.list-2:after{
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    clear: both;
+}
+.list-1,.list-2{
+    border-bottom: 1px solid #cccccc;
+}
+.ul-list{
+    float: right;
+    margin-right: 40px;
+    margin-top: 36px;
+    margin-bottom: 6px;
+    width: 1110px;
+    height: auto;
+}
+.ul-list2{
+    float: right;
+    margin-right: 40px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    width: 1110px;
+    height: auto;
+}
+.list-1 .pBox{
+    margin-top: 36px;
+    margin-bottom: 6px;
+    float: left;
+}
+.list-2 .pBox{
+    margin-top: 10px;
+    margin-bottom: 6px;
+    float: left;
+}
+.list-1 .pBox .p1,.list-2 .pBox .p1{
+    float: left;
+    text-align: center;
+    line-height: 24px;
+    width: 50px;
+    height: 24px;
+    font-size: 14px;
+    margin-right: 8px;
+    color: #999;
+}
+.list-1 .pBox .all,.list-2 .pBox .all{
+    float: left;
+    font-size: 14px;
+    text-align: center;
+    width: 50px;
+    height: 24px;
+    background: #64a131;
+    line-height: 24px;
+    color: #ffffff;
+}
+.list ul li{
+    text-align: center;
+    float: left;
+    height: 24px;
+    line-height: 24px;
+    margin:0 10px;
+}
+/*****************liebiao**************/
+.liebiao{
+    width: 100%;
+    height: auto;
+}
+.liebiao:after{
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    clear: both;
+}
+.liebiao-left{
+    width: 1020px;
+    height: auto;
+    float: left;
+    margin-top: 30px;
+    margin-left: 5px;
+}
+.liebiao-left dl{
+    float: left;
+    margin: 7px;
+}
+.liebiao-right{
+    width: 240px;
+    height: auto;
+    float: right;
+}
+.liebiao-right span{
+    float: right;
+    font-size: 14px;
+    color: #64a131;
+    width: 240px;
+    height: 30px;
+    margin-top: 30px;
+    border-bottom: 1px solid #cccccc;
+}
+.bao{
+    width: 1280px;
+    height: auto;
+    margin: 0 auto;
+}
+/************************details***************************/
+.content-page:after,.content-page-a:after{
+    content: "x";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+}
+.content-page{
+    width: 1280px;
+    height: auto;
+    float: left;
+}
+.content-page-a{
+    width: 1280px;
+    height: 20px;
+    margin-top: 46px;
+    margin-bottom: 18px;
+}
+.content-page-a a{
+    float: left;
+    font-weight: bold;
+    color: #64a131;
+    font-size: 14px;
+}
+.content-page-a span{
+    float: left;
+    font-size: 14px;
+    color: #999;
+}
+#MyFocus{width:700px;height:560px;position:relative;overflow:hidden;float: left;}
+#MyFocus .tuul{float:left;width:560px;height:560px;padding:0;margin:0}
+#MyFocus .tuul li{display:none}
+#MyFocus .tuul li img{width:560px;height:560px}
+#MyFocus .tuul li a{display:block;width:560px;height:560px}
+#MyFocus .tuul li.cur{display:block}
+#MyFocus .dianul{list-style:none;float:left;width:140px;height:560px;padding:0;margin:0}
+#MyFocus .dianul li{cursor:pointer;width:138px;height:138px;margin-bottom:2px;position:relative}
+#MyFocus .dianul li img{width:100%;height:100%}
+#MyFocus .dianul li.cur{border:1px solid #f6af0d}
+#MyFocus .dianul li.cur span{display:block}
+#MyFocus .dianul li span{position:absolute;top:0;left:0;z-index:2;width:100%;height:100%;display:none}
+#MyFocus .dianul li.last{margin-bottom:0}
+.d-right{
+    width: 540px;
+    height: 585px;
+    float: right;
+    margin: 20px 0 0 10px;
+}
+.d-right .name p{
+    margin-top: 16px;
+    font-size: 16px;
+    color: #666;
+}
+.guoPrice{
+    margin-top: 10px;
+    width:540px;
+    height: 76px;
+    line-height: 76px;
+    background: url("../images/icons.png") 0 -60px;
+}
+h5,.guoPrice span, .guoPrice .weiXin {
+    display: inline;
+}
+.guoPrice h5{
+    padding-left: 10px;
+    padding-right: 14px;
+    color: #666666;
+}
+.guoPrice .weiXin{
+    padding-right: 10px;
+}
+.guoPrice span{
+    margin-right: 348px;
+    color: #64a131;
+    font-size: 20px;
+    font-weight: bold;
+}
+.info{
+    width: 540px;
+    height: auto;
+    border-bottom: 1px solid #cccccc;
+}
+.number h5{
+    float: left;
+}
+.y-info,.x-info,.number,.buy-bt{
+    width:540px;
+    height: 60px;
+}
+.x-info h5,.y-info h5{
+    float: left;
+    margin-left: 10px;
+    margin-right: 20px;
+    color: #666666;
+    line-height: 60px;
+}
+.x-info a{
+    text-align: center;
+    margin-top: 16px;
+    line-height:26px;
+    margin-left: 10px;
+    float: left;
+    width: 64px;
+    height: 30px;
+    background: #64a131;
+    border: 1px solid #eeeeee;
+    color: #ffffff;
+}
+.y-info .menu span{
+    margin-top: 16px;
+    float: left;
+    text-align: center;
+    line-height: 26px;
+    width:70px;
+    height: 32px;
+    border: 1px solid #cccccc;
+    padding: 3px;
+}
+.y-info-right{
+    float: left;
+    margin-left: 5px;
+    margin-top: 22px;
+    color: #64a131;
+    font-size: 14px;
+}
+.number h5{
+    width: 50px;
+    float: left;
+    color: #666666;
+    padding-left: 12px;
+    margin-top: 12px;
+}
+.number-s{
+    margin-top: 8px;
+    float: left;
+}
+.number-s #re{
+    text-align: center;
+    line-height: 24px;
+    float: left;
+    width: 28px;
+    height: 24px;
+    background: #cccccc;
+}
+.number-s #add{
+    text-align: center;
+    line-height: 24px;
+    float: left;
+    width: 36px;
+    height: 24px;
+    border: none;
+}
+.number-s #addl{
+    line-height: 24px;
+    text-align: center;
+    float: left;
+    width: 28px;
+    height: 24px;
+    background: #cccccc;
+}
+.number-s{
+    margin-left:20px ;
+    border: 1px solid #cccccc;
+}
+.area{
+    display: none;
+    float: left;
+    width: 240px;
+    height:70px;
+    border: 1px solid #cccccc;
+}
+.area  ul li {
+    float: left;
+    margin: 5px;
+}
+.area  ul li a{
+    font-size: 14px;
+    color: #666;
+}
+.buy-bt .w1{
+    float: left;
+    text-align: center;
+    line-height: 36px;
+    margin-left: 70px;
+    width: 160px;
+    height:34px;
+    border-radius: 5px;
+    border: 1px solid #64a131;
+    background: #ffffff;
+}
+.buy-bt .w2{
+    margin-left: 30px;
+    float: left;
+    text-align: center;
+    line-height: 36px;
+    width: 162px;
+    height:36px;
+    border-radius: 5px;
+    color: #ffffff;
+    background: #64a131;
+}
+.ginfo{
+    margin-top: 18px;
+    width: 540px;
+    height: auto;
+}
+.ginfoh{
+    margin: 8px;
+    float: left;
+    width: 240px;
+    height: 20px;
+}
+.ginfoh h5{
+    float: left;
+    margin-left: 10px;
+    margin-right: 20px;
+    color: #666666;
+}
+.ginfoh span{
+    font-size: 14px;
+}
+.goods-info:after{
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+.goods-info{
+    width: 1280px;
+    height: auto;
+    margin: 0 auto;
+}
+.goods-info .goodsbar-left{
+    width: 998px;
+    height: 38px;
+    background: #eeeeee;
+    float: left;
+}
+.goods-info .goodsbar-left .goodsbar-left-1 ul{
+    float: left;
+    height: 36px;
+}
+.goods-info .goodsbar-left .goodsbar-left-1 ul li{
+    float: left;
+    line-height: 36px;
+    text-align: center;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+}
+.ad{
+    float: right;
+    font-size: 16px;
+    width: 160px;
+    height: 36px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 36px;
+    background: #64a131;
+}
+.tishi{
+    float: left;
+    font-size: 16px;
+}
+/*********************login**********************/
+.login{
+    width: 1000px;
+    height: 630px;
+    margin: 0 auto;
+}
+.login p{
+    width:1000px;
+    font-size: 22px;
+    text-align:left;
+    color: #999999;
+    padding-bottom: 22px;
+    margin: 80px 0 38px 0;
+    border-bottom: 1px solid #cccccc;
+}
+.login-left{
+    float: left;
+    width: 500px;
+    height: 400px;
+    border: 1px solid #cccccc;
+    background: url("../images/huiyuan.jpg") no-repeat;
+}
+.login-left a{
+    border-radius: 5px;
+    margin-left: 174px;
+    margin-top: 330px;
+    display: block;
+    line-height: 50px;
+    text-align: center;
+    font-size: 18px;
+    width: 154px;
+    height: 50px;
+    color: #64a131;
+    border: 1px solid #64a131;
+}
+.login-right{
+    width: 420px;
+    height:auto;
+    margin-top: 80px;
+    float: right;
+}
+.login-right .phone{
+    width: 420px;
+    height: 42px;
+    margin-bottom: 30px;
+}
+.login-right .pwd{
+    width: 420px;
+    height: 42px;
+    margin-bottom: 40px;
+}
+.login .login-right span{
+    text-align: right;
+    margin-top: 12px;
+    width: 50px;
+    height: 20px;
+    font-size: 16px;
+    color: #999999;
+    float: left;
+    margin-right: 34px;
+}
+.login-right .phone input, .login-right .pwd input{
+    width: 320px;
+    height: 38px;
+    font-size: 16px;
+    float: right;
+    border: 1px solid #cccccc;
+    color: #999999;
+}
+.remember{
+    float: left;
+    width: 108px;
+    height: 20px;
+    font-size: 14px;
+    color: #999;
+}
+.x{
+    width: 420px;
+    height: 20px;
+    margin-bottom: 20px;
+}
+.forget a{
+    float: right;
+    width: 150px;
+    height: 20px;
+    font-size: 16px;
+    color: #999999;
+}
+.aa{
+    width: 420px;
+    height: auto;
+}
+.aa1{
+    border-radius: 5px;
+    float: left;
+    width: 144px;
+    height: 40px;
+    background: #64a131;
+    color: #ffffff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+}
+.aa2{
+    border-radius: 8px;
+    float: right;
+    width: 144px;
+    height: 38px;
+    color: #64a131;
+    border: 1px solid #64a131;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+}
+.remember,.login-right .aa1{
+    margin-left: 100px;
+}
+.login-r-right .aa1{
+    margin-left: 114px;
+}
+/***********register*************/
+.login-r-right{
+    width: 420px;
+    height:auto;
+    float: right;
+}
+.login-r-right .phone{
+    width: 420px;
+    height: 40px;
+    margin-bottom: 30px;
+}
+.login-r-right .pwd{
+    width: 420px;
+    height: 40px;
+    margin-bottom: 30px;
+}
+.login .login-r-right span{
+    text-align: right;
+    margin-top: 12px;
+    width: 80px;
+    height: 20px;
+    font-size: 16px;
+    color: #999999;
+    float: left;
+    margin-right: 34px;
+}
+.login-r-right .phone input, .login-r-right .pwd input{
+    width: 300px;
+    height: 38px;
+    font-size: 14px;
+    float: right;
+    border: 1px solid #cccccc;
+    color: #999999;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>接口</title>
+</head>
+<body>
+用户：<input type="text" id="txt"/>
+密码：<input type="password" id="pw1"/>
+校验密码：<input type="password" id="pw2"/>
+<input type="button" value="注册" id="btn"/>
+<input type="button" value="登录" id="btn2"/>
+<script>
+    var oTxt=document.getElementById("txt");
+    var oPw1=document.getElementById("pw1");
+    var oPw2=document.getElementById("pw2");
+    var oBtn=document.getElementById("btn");
+    var oBtn2=document.getElementById("btn2");
+    /*function fn(data) {
+        if(data==1){
+            alert("已存在");
+        }else {
+            alert("可使用");
+        }
+    }
+    oTxt.onblur=function () {
+        var oTxtValue=oTxt.value;
+        var oScript=document.createElement("script");
+        oScript.src="http://10.9.163.115:8081/user/CheckUserNameGet?username="+oTxtValue+"&callback=fn";
+        document.body.appendChild(oScript);
+        oScript.onload=function () {
+            this.parentNode.removeChild(this);
+        }
+    };*/
+    oTxt.onblur=function () {
+        var oTxtValue=oTxt.value;
+        var xhr =new XMLHttpRequest();
+        xhr.onreadystatechange=function () {
+            if(xhr.readyState==4){
+                if(xhr.status==200){
+                    var result=eval("("+xhr.responseText+")");
+                    if(result==1){
+                        alert("用户已存在");
+                    }else {
+                    }
+                }
+            }
+        };
+        xhr.open("get","http://localhost:8080/user/CheckUserNameGet?username="+oTxtValue,true);
+        xhr.send();
+    };//注册时判断用户名是否用过
+    oPw1.onblur=function () {
+        var oPw1Value=this.value;
+        var reg1=/^[a-z]*[0-9]*/;
+        var test=reg1.test(oPw1Value);
+        if(test==false){
+            alert("密码不合法");
+        }else {
+        }
+    };//判断密码是否合法
+    oBtn.onclick=function () {
+        var xhr;
+        xhr =new XMLHttpRequest();
+        var oTxtValue=oTxt.value;
+        var oPassWd2=oPw2.value;
+        var oPassWd=oPw1.value;
+        if(oPassWd==oPassWd2){
+            xhr.onreadystatechange=function () {
+                if(xhr.readyState==4){
+                    if(xhr.status==200){
+                        var result=eval("("+xhr.responseText+")");
+                        if(result==1){
+                            alert("注册成功");
+                        }else {
+                            alert("用户已存在");
+                        }
+                    }
+                }
+            };
+            xhr.open("post","http://localhost:8080/user/register",true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.send("name="+oTxtValue+"&password="+oPassWd);
+        }else {
+            alert("密码不同");
+        }
+    };//判断密码是否校验正确并注册
+    oBtn2.onclick=function () {
+        var oTxtValue=oTxt.value;
+        var oPassWd=oPw1.value;
+        var oPassWd2=oPw2.value;
+        if(oPassWd==oPassWd2){
+            var xhr=new XMLHttpRequest();
+            xhr.onreadystatechange=function () {
+                if(xhr.readyState==4){
+                    if(xhr.status==200){
+                        var result=eval("("+xhr.responseText+")");
+                        if(result==1){
+                            alert("登录成功");
+                        }else {
+                            alert("登录失败");
+                        }
+                    }
+                }
+            };
+            xhr.open("get","http://localhost:8080/user/loginget?name="+oTxtValue+"&password="+oPassWd,true);
+            xhr.send();
+        }else {
+            alert("密码错误");
+        }
+    };//判断是否登录成功
+</script>
+</body>
+</html>

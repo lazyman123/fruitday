@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        div{
+            float: left;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+    <p id="oName">1</p>
+    <p id="oAge">2</p>
+    <p id="oImg">3</p>
+    <input type="button" id="btn" value="加载"/>
+</div>
+<div id="div2">
+    <p id="oNam">1</p>
+    <p id="oAg">2</p>
+    <p id="oIm">3</p>
+    <input type="button" id="btn2" value="加载"/>
+</div>
+<input type="button" id="btn3" value="加载"/>
+<script>
+    var oBtn=document.getElementById("btn");
+    var oBtn2=document.getElementById("btn2");
+    var oBtn3=document.getElementById("btn3");
+    oBtn.onclick=function () {
+        var xhr;
+        if(window.XMLHttpRequest){
+            xhr=new XMLHttpRequest();
+        }else {
+            xhr=new ActiveXObject();
+        }
+        xhr.onreadystatechange=function () {
+            if(xhr.readyState==4){
+                var oDiv1=document.getElementById("div1");
+                if(xhr.status==200){
+                    var result=xhr.responseText;
+                    var oDate=JSON.parse(result);
+                    var oName=document.getElementById("oName");
+                    oName.innerHTML=oDate[0].name;
+                    var oAge=document.getElementById("oAge");
+                    oAge.innerHTML=oDate[0].age;
+                    var oPimg=document.getElementById("oImg");
+                    var oImg=document.createElement("img");
+                    oImg.style.width="200px";
+                    oImg.style.height="300px";
+                    oImg.src="data/"+oDate[0].imgsrc;
+                    oPimg.innerHTML="";
+                    oPimg.appendChild(oImg);
+                }else {
+                    oDiv1.innerHTML="未获取";
+                }
+            }
+        };
+        xhr.open("get","http://localhost:8080/api/Users",true);
+        xhr.send();
+    };
+    oBtn2.onclick=function () {
+        var xhr;
+        if(window.XMLHttpRequest){
+            xhr=new XMLHttpRequest();
+        }else {
+            xhr=new ActiveXObject();
+        }
+        xhr.onreadystatechange=function () {
+            if(xhr.readyState==4){
+                var oDiv2=document.getElementById("div2");
+                if(xhr.status==200){
+                    var result=xhr.responseText;
+                    var oDate=JSON.parse(result);
+                    var oName=document.getElementById("oNam");
+                    oName.innerHTML=oDate[1].name;
+                    var oAge=document.getElementById("oAg");
+                    oAge.innerHTML=oDate[1].age;
+                    var oPimg=document.getElementById("oIm");
+                    var oImg=document.createElement("img");
+                    oImg.style.width="200px";
+                    oImg.style.height="300px";
+                    oImg.src="data/"+oDate[1].imgsrc;
+                    oPimg.innerHTML="";
+                    oPimg.appendChild(oImg);
+                }else {
+                    oDiv2.innerHTML="未获取";
+                }
+            }
+        };
+        xhr.open("get","data/package.json",true);
+        xhr.send();
+    }
+</script>
+</body>
+</html>

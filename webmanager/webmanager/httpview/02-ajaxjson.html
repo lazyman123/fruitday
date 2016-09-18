@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax json data</title>
+</head>
+<body>
+<div>
+    <p id="pname">1</p>
+    <p id="page">2</p>
+    <p id="pimg">3</p>
+</div>
+<input type="button" id="bt1" value="加载数据json1"/>
+<input type="button" id="bt2" value="加载数据json2"/>
+<script>
+    var oBt=document.getElementById("bt1");
+    oBt.onclick=function(){
+        var xhr;
+        if(window.XMLHttpRequest){
+            xhr=new XMLHttpRequest();
+        }else{
+            xhr=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4){
+                if(xhr.status==200){
+                    var result=xhr.responseText;//string
+                    //object;
+                    //var oData=JSON.parse(result); //
+                    var oData=eval("("+result+")");
+                    var oPName=document.getElementById("pname");
+                    oPName.innerHTML=oData.name;
+                    var oPAge=document.getElementById("page");
+                    oPAge.innerHTML=oData.age;
+                    var oPImg=document.getElementById("pimg");
+                    var oImg=document.createElement("img");
+                    oImg.style.width="200px";
+                    oImg.style.height="300px";
+                    oImg.src="img/"+oData.imgsrc;
+                    oPImg.innerHTML="";
+                    oPImg.appendChild(oImg);
+                }else{
+                    alert("获取数据失败");
+                }
+            }
+        }
+        xhr.open("get", "http://localhost:8080/api/users", true);
+        xhr.send();
+    }
+
+    var oBt2=document.getElementById("bt2");
+    oBt2.onclick=function(){
+        var xhr;
+        if(window.XMLHttpRequest){
+            xhr=new XMLHttpRequest();
+        }else{
+            xhr=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4){
+                if(xhr.status==200){
+                    var result=xhr.responseText;//string
+                    //object;
+                    //var oData=JSON.parse(result); //
+                    var oData=eval("("+result+")");
+                    var oPName=document.getElementById("pname");
+                    oPName.innerHTML=oData.name;
+                    var oPAge=document.getElementById("page");
+                    oPAge.innerHTML=oData.age;
+                    var oPImg=document.getElementById("pimg");
+                    var oImg=document.createElement("img");
+                    oImg.style.width="200px";
+                    oImg.style.height="300px";
+                    oImg.src="img/"+oData.imgsrc;
+                    oPImg.innerHTML="";
+                    oPImg.appendChild(oImg);
+                }else{
+                    alert("获取数据失败");
+                }
+            }
+        }
+        xhr.open("get","data/datajson2.json",true);
+        xhr.send();
+    }
+</script>
+</body>
+</html>
